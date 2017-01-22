@@ -1,0 +1,36 @@
+<h1>Contacts#new</h1>
+<p>Find me in app/views/contacts/new.html.erb</p>
+
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+
+<%= notice %>
+<%= form_for(@contact, url: confirm_contacts_path) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @contact.errors.count %>件のエラーがあります。</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.label :名前 %>
+  <%= f.text_field :name, class: 'form-control' %>
+  <br>
+  <%= f.label :メールアドレス %>
+  <%= f.text_field :email, class: 'form-control' %>
+  <br>
+  <br>
+  <%= f.label :内容 %>
+  <%= f.text_field :contact, class: 'form-control' %>
+  <br>
+  <%= f.submit %>
+<% end %>
+
+</div>
+</div>
