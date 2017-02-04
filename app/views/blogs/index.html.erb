@@ -1,4 +1,4 @@
- <div class="container">
+<div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
     <p><%= notice %></p>
     <h1>ブログ一覧</h1>
@@ -9,8 +9,14 @@
       <p><%= blog.content %></p>
       <%= link_to "編集", edit_blog_path(blog.id), class: 'btn btn-default btn-sm btn-success' %>
       <%= link_to "削除", blog_path(blog.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
-    </div>
+    <br>
+    <% @users.each do |user| %>
+    <%= user.name %>
     <% end %>
+   
+   
+  </div>
+<% end %>
   </div>
   <div id="page-top-btn" class="page-top-btn">
     <p><a class="move-page-top" id="move-page-top">▲</a></p>
