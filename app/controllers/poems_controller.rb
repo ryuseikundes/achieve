@@ -5,7 +5,7 @@ class PoemsController < ApplicationController
   end
 
   def show
-    @poems = Poem.find(:all)
+    @poem = Poem.find(:all)
   end
 
 
