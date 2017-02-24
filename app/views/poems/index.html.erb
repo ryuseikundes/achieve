@@ -1,0 +1,5 @@
+<%= @poems.each do |poem| %>
+  <%= poem.title %>
+  <%= poem.content %>
+<% end %>
+<%= link_to '一覧ページ', '/poems/show' %>

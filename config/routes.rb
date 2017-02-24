@@ -26,6 +26,8 @@ if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end
 
+resources :poems, only: [:index, :show]
+
 end
 
 
