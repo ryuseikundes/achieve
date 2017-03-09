@@ -1,18 +1,22 @@
 Rails.application.routes.draw do
 
 
+
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  get 'top/index'
 
-  get 'top/index'
 
- resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy] do
 
- collection do
- post :confirm
+
+  resources :blogs do
+   resources :comments
+
+   collection do
+     post :confirm
+   end
  end
-end
+
  resource :contacts, only: [:new, :create] do
 
   collection do
@@ -34,6 +38,7 @@ resources :poems, only: [:index, :show]
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
 }
+
 
 end
 
