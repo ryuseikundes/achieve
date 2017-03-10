@@ -49,6 +49,8 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @blog.destroy
     redirect_to blogs_path, notice:"ブログを消去しました！"
+
+    
   end
 
   def show
