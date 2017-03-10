@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
 
 
-
-
-
-  get 'relationships/create'
-
-  get 'relationships/destroy'
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
 
@@ -20,13 +13,17 @@ Rails.application.routes.draw do
    collection do
      post :confirm
    end
- end
+  end
 
  resource :contacts, only: [:new, :create] do
 
   collection do
    post :confirm
   end
+ end
+
+ resources :conversations do
+  resources :messages
  end
 
 root 'top#index'
