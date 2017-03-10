@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
 
 
+
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
 
@@ -38,6 +43,10 @@ resources :poems, only: [:index, :show]
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
 }
+
+resources :users, only: [:index, :show]
+
+ resources :relationships, only: [:create, :destroy]
 
 
 end

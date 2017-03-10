@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <h2><%= @user.name %>フォローユーザー一覧</h2>
+    <%= render partial: 'followed_user' %>
+    </div>
+  <div class="row">
+    <h2><%= @user.name %>フォロワーユーザー一覧</h2>
+    <%= render partial: 'followers_user' %>
+   </div>
+</div>
