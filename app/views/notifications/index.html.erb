@@ -1,10 +1,10 @@
 <div class="container">
 <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
 <h2 class="text-color">お知らせ</h2>
-<ul>
+<ul　list-style:none;>
   <% @notifications.each do |notification| %>
   <hr>
-    <li>
+    <li　list-style:none;>
       <span><%= read_or(notification.read) %></span>
       <p>
         <%= notification.comment.user.try(:name) %>さんが
