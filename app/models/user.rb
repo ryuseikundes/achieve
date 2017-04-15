@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
      user = User.find_by(email: "#{auth.uid}-#{auth.provider}@example.com")
    end
 
+
    unless user
      user = User.new(
          name:     auth.extra.raw_info.name,
