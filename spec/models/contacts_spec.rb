@@ -2,13 +2,8 @@ require 'rails_helper'
 
 describe Contact do
 
- 
- #名前がなければ無効
-  it "is invalid without a name" do
-    contact = Contact.new
-    expect(contact).not_to be_valid
-  end
 
+ 
 #名前があれば有効
   it "is valid with name" do
     contact = Contact.new
