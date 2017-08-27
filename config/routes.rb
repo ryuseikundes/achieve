@@ -38,9 +38,9 @@ resources :poems, only: [:index, :show]
 
 
 
-  devise_for :users, controllers: {
-    registrations: "users/registrations",
-    omniauth_callbacks: "users/omniauth_callbacks"
+devise_for :users, controllers: {
+ registrations: "users/registrations",
+ omniauth_callbacks: "users/omniauth_callbacks"
 }
 
 resources :users, only: [:index, :show]

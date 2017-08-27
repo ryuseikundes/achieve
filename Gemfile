@@ -62,6 +62,7 @@ gem 'faker'
 group :development do
   gem 'letter_opener_web'
   gem 'web-console', '~> 2.0'
+
 end
 
 gem 'rails_admin'
@@ -78,6 +79,7 @@ gem 'carrierwave'
 gem 'pusher'
 gem 'fog'
 gem 'dotenv-rails'
+
 gem 'unicorn'
 
 gem 'therubyracer', platforms: :ruby
