@@ -16,5 +16,3 @@
 .env
 
 .rspec
-
-!/public/uploads/tmp
