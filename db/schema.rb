@@ -106,6 +106,8 @@ ActiveRecord::Schema.define(version: 20170311031208) do
     t.string   "uid"
     t.string   "provider"
     t.string   "image_url"
+    t.string   "token"
+    t.string   "meta"
     t.string   "avatar"
   end
 

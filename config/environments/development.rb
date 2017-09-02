@@ -16,8 +16,8 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :letter_opener_web
+  # config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  # config.action_mailer.delivery_method = :letter_opener_web
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -34,6 +34,20 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
+
+  config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings =
+  {
+  user_name: ENV['SENDGRID_USERNAME'],
+  password: ENV['SENDGRID_PASSWORD'],
+  domain: "example.com",
+  address: "smtp.sendgrid.net",
+  port: 587,
+  authentication: :plain,
+  enable_starttls_auto: true
+  }
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.

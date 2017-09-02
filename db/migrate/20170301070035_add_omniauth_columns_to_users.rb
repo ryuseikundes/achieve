@@ -3,6 +3,8 @@ class AddOmniauthColumnsToUsers < ActiveRecord::Migration
     add_column :users, :uid, :string
     add_column :users, :provider, :string
     add_column :users, :image_url, :string
+    add_column :users, :token, :string
+    add_column :users, :meta, :string
 
      add_index :users, [:uid, :provider], unique: true
   end

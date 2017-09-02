@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
           unread_counts: Notification.where(user_id: @comment.blog.user.id, read: false).count
         })
         format.js { render :index }
+        flash[:notice]  = '作成しました！'
       else
         format.html { render :new }
       end
