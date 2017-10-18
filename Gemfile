@@ -62,6 +62,7 @@ gem 'faker'
 group :development do
   gem 'letter_opener_web'
   gem 'web-console', '~> 2.0'
+
 end
 
 gem 'rails_admin'
@@ -73,11 +74,13 @@ gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 gem 'carrierwave'
-gem 'rmagick'
+# gem 'rmagick'
 gem 'pusher'
 gem 'fog'
 gem 'dotenv-rails'
+
 gem 'unicorn'
 
 gem 'therubyracer', platforms: :ruby

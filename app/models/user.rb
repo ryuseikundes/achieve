@@ -61,6 +61,20 @@ class User < ActiveRecord::Base
     user
     end
 
+    def self.find_for_google(auth)
+    user = User.find_by(email: auth.info.email)
+
+    unless user
+      user = User.create(name:     auth.info.name,
+                         provider: auth.provider,
+                         uid:      auth.uid,
+                         token:    auth.credentials.token,
+                         password: Devise.friendly_token[0, 20],
+                         meta:     auth.to_yaml)
+    end
+    user
+   end
+
     def self.create_unique_string
      SecureRandom.uuid
     end

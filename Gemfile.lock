@@ -327,6 +327,11 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (4.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-google-oauth2 (0.5.2)
+      jwt (~> 1.5)
+      multi_json (~> 1.3)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.3.1)
     omniauth-oauth (1.1.0)
       oauth
       omniauth (~> 1.0)
@@ -412,7 +417,6 @@ GEM
     remotipart (1.3.1)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    rmagick (2.16.0)
     rspec-core (3.6.0)
       rspec-support (~> 3.6.0)
     rspec-expectations (3.6.0)
@@ -521,6 +525,7 @@ DEPENDENCIES
   letter_opener_web
   omniauth
   omniauth-facebook
+  omniauth-google-oauth2
   omniauth-twitter
   pg
   pry-rails
@@ -528,7 +533,6 @@ DEPENDENCIES
   rails (= 4.2.3)
   rails_12factor
   rails_admin
-  rmagick
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -542,4 +546,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.14.3
+   1.15.3
