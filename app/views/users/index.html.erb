@@ -1,20 +1,12 @@
 <div class="container">
   <h2>ユーザー</h2>
   <% @users.each do |user| %>
-<<<<<<< HEAD
-      <div class="container-child col-md-2 col-sm-4 col-xs-6 ">
-       <%= link_to user_path(user) do %>
-       <p><%= profile_img(user) %></p>
-       <p><%= user.name %></p>
-       <% end %>
-         <%= link_to 'メッセージ', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
-         <%= render 'follow_form', user: user unless user.id == current_user.id %>
-=======
+
       <div class="container-child col-md-4 col-sm-6 col-xs-6 ">
         <div class="container-fluid bg-info"><br>
           <div class="card">
             <%= link_to profile_img(user), user_path(user),:class => "card-img-top", :alt => "Card image cap" %>
-            
+
               <div class="card-block">
                 <h4 class="card-title"><%= user.email %></h4>
                 <% unless user.id == current_user.id %>
@@ -24,7 +16,7 @@
               </div>
           </div><br>
         </div>
->>>>>>> f76bf613152c1aebbe98d992c7997414e7f61531
+
       </div>
   <% end %>
 </div>

@@ -59,12 +59,10 @@
           </ul>
         </li>
         <% if user_signed_in? %>
-<<<<<<< HEAD
-            <li id="test"><%= link_to 'マイページ', edit_user_registration_path %></li>
-=======
-        
+
+
             <li><%= link_to 'マイページ', edit_user_registration_path %></li>
->>>>>>> f76bf613152c1aebbe98d992c7997414e7f61531
+
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'ログイン', new_user_session_path %></li>
