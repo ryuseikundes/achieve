@@ -1,11 +1,13 @@
-n = 1
+20.times do |n|
+  name = Faker::Pokemon.name
+  email = Faker::Internet.email
+  password = Faker::Internet.password
+  # uid = SecureRandom.uuid
 
-title = Faker::Pokemon.name
-
-while n <= 100
-  Blog.create(
-    title: title,
-    user_id: n
+  User.create(
+    name: name,
+    email: email,
+    password: password,
+    uid: n
   )
-  n = n + 1
 end

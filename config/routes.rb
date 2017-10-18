@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :messages
  end
 
-root 'top#index'
+root :to =>'top#index'
 
 if Rails.env.development?
   mount LetterOpenerWeb::Engine, at: "/letter_opener"
@@ -49,7 +49,6 @@ resources :users, only: [:index, :show]
 
 
 end
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

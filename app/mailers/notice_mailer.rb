@@ -6,6 +6,7 @@ class NoticeMailer < ApplicationMailer
   #   en.notice_mailer.sendmail_blog.subject
   #
   def sendmail_blog(blog)
+
       @blog = blog
 
       mail to: 'r9.life.is.art.21m@gmail.com',
