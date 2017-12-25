@@ -21,7 +21,7 @@
     <%= f.hidden_field :avatar_cache %>
   </div>
 
-<% if @user.provider.blank? %>
+<% if @user.provider.blank?  %>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

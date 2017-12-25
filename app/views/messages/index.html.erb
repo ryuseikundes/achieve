@@ -3,8 +3,10 @@
   <% raise %>
 <% end %>
 
+
 <div class="ui segment">
   <% @messages.each do |message| %>
+
     <% if message.body %>
       <% user = User.find(message.user_id) %>
       <div class="item">
@@ -23,6 +25,7 @@
 </div>
 
 <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+<%= f.error_messages! %>
   <div class="field">
     <%= f.text_area :body, class: "form-control" %>
   </div>

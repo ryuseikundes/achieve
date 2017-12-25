@@ -1,10 +1,16 @@
 class ContactsController < ApplicationController
+  # def new
+  #   if params[:back]
+  #     @contact = Contact.new(contacts_params)
+  #   else
+  #     @contact = Contact.new
+  #   end
+  # end
+
   def new
-    if params[:back]
-      @contact = Contact.new(contacts_params)
-    else
-      @contact = Contact.new
-    end
+    params[:back] ? contact_new_with_params : @contact = Contact.new
+
+    
   end
 
   def create
@@ -29,4 +35,8 @@ class ContactsController < ApplicationController
     def contacts_params
       params.require(:contact).permit(:name, :email, :contact)
     end
+
+    def contact_new_with_params
+   @contact = Contact.new(contact_params)
+ end
 end

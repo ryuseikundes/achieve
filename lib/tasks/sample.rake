@@ -1,0 +1,2 @@
+namespace :sample do
+end
