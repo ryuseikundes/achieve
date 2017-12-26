@@ -19,6 +19,8 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.create(blogs_params)
     @blog.user_id = current_user.id
+
+    #  @blog = Blog.new(title:params[:title],content: params[:content], user_id: current_user.id)
     if @blog.save(validate: false)
       redirect_to blogs_path, notice: "ブログを作成しました！"
       NoticeMailer.sendmail_blog(@blog).deliver

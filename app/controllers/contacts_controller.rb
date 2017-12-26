@@ -1,17 +1,13 @@
 class ContactsController < ApplicationController
-  # def new
-  #   if params[:back]
-  #     @contact = Contact.new(contacts_params)
-  #   else
-  #     @contact = Contact.new
-  #   end
-  # end
-
   def new
-    params[:back] ? contact_new_with_params : @contact = Contact.new
-
-    
+    if params[:back]
+      @contact = Contact.new(contacts_params)
+    else
+      @contact = Contact.new
+    end
   end
+
+
 
   def create
     @contact = Contact.new(contacts_params)
