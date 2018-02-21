@@ -5,8 +5,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
-
-
   has_many :blogs, dependent: :destroy
 # CommentモデルのAssociationを設定
   has_many :comments, dependent: :destroy
@@ -16,6 +14,10 @@ class User < ActiveRecord::Base
 
   has_many :followed_users, through: :relationships, source: :followed
   has_many :followers, through: :reverse_relationships, source: :follower
+
+has_many :messages, dependent: :destroy
+  has_many :conversations, foreign_key: "sender_id", class_name: "Conversation", dependent: :destroy
+ has_many :conversations, foreign_key: "recipient_id", class_name: "Conversation", dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 
